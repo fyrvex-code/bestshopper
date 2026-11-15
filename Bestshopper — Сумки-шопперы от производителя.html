@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bestshopper — Сумки-шопперы от производителя</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F4F1;--surf:#FFFFFF;--tx:#1A2236;--mut:#5B6478;--ln:#D8DBD4;--ac:#A98A57;--acd:#7E6335;--w:rgba(18,28,51,.07);--hero:#121C33;--herotx:#F3F4F1;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1322;--surf:#141C32;--tx:#E9EBF1;--mut:#9AA3B8;--ln:#26304A;--ac:#C9A875;--acd:#C9A875;--w:rgba(255,255,255,.06);--hero:#0A0F1D;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D1322;--surf:#141C32;--tx:#E9EBF1;--mut:#9AA3B8;--ln:#26304A;--ac:#C9A875;--acd:#C9A875;--w:rgba(255,255,255,.06);--hero:#0A0F1D;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 17px/1.65 Manrope,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+h1,h2,h3{font-family:Prata,Georgia,"Times New Roman",serif;font-weight:400;line-height:1.15;margin:0}
+h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:.5em}
+h3{font-size:1.35rem;margin-bottom:.4em}
+p{margin:0 0 1em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+.sec{padding:clamp(56px,9vw,112px) 0}
+.tw{background-image:repeating-linear-gradient(45deg,var(--w) 0 1px,transparent 1px 7px)}
+.pl{background-image:linear-gradient(rgba(0,0,0,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.09) 1px,transparent 1px);background-size:6px 6px}
+.btn{display:inline-block;padding:.85em 1.8em;border:1px solid var(--ac);background:var(--ac);color:#121C33;font-weight:600;text-decoration:none;font-size:.95rem;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--ac)}
+.btn.o{background:transparent;color:inherit;border-color:currentColor}
+.btn.o:hover{color:var(--ac);border-color:var(--ac)}
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--ln)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.brand b{font:400 1.5rem Prata,Georgia,serif;letter-spacing:.02em}
+.brand span{font-size:.75rem;color:var(--mut);margin-top:3px}
+nav{display:flex;gap:clamp(14px,2.4vw,32px);overflow-x:auto;scrollbar-width:none}
+nav a{white-space:nowrap;text-decoration:none;font-size:.93rem;color:var(--mut);padding:6px 0;border-bottom:1px solid transparent}
+nav a:hover,nav a.on{color:var(--tx);border-color:var(--ac)}
+.tel{font-weight:600;text-decoration:none;white-space:nowrap;font-size:.95rem}
+@media(max-width:900px){.bar{flex-wrap:wrap;gap:10px 20px}nav{order:3;width:100%}}
+/* hero */
+.hero{background-color:var(--hero);color:var(--herotx);--w:rgba(255,255,255,.055)}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center;padding-top:clamp(64px,10vw,140px);padding-bottom:clamp(64px,10vw,140px)}
+.hero h1{font-size:clamp(2.5rem,6.2vw,5.2rem)}
+.hero p{margin:1.4em 0 2em;color:#B9C0D0;max-width:34ch}
+.hero .btns{display:flex;flex-wrap:wrap;gap:14px}
+.hero svg{width:100%;max-width:300px;justify-self:center}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.hero svg{max-width:190px;justify-self:start}}
+/* statements */
+.st{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.st>div{border-top:1px solid var(--ac);padding-top:24px}
+.st p{color:var(--mut)}
+@media(max-width:700px){.st{grid-template-columns:1fr}}
+/* band */
+.band{background:var(--surf);border-block:1px solid var(--ln)}
+.band .wrap{display:flex;flex-wrap:wrap;gap:24px 56px;align-items:center;justify-content:space-between}
+.band p{max-width:44ch;margin:0;color:var(--mut)}
+.band h2{margin:0 0 .3em}
+/* products */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.tile{display:flex;flex-direction:column;justify-content:space-between;min-height:210px;padding:26px;background-color:var(--surf);border:1px solid var(--ln);text-decoration:none;transition:border-color .2s}
+.tile:hover{border-color:var(--ac)}
+.tile h3{margin:0}
+.tile small{color:var(--acd);font-size:.88rem;font-weight:600}
+.tile.big{grid-column:span 2}
+.subs{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px}
+.subs a{font-size:.92rem;color:var(--acd);font-weight:600}
+@media(max-width:560px){.tile.big{grid-column:auto}}
+/* fabrics */
+.lead{color:var(--mut);max-width:52ch;margin-bottom:2.2em}
+.fab{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.sw{height:130px;margin-bottom:20px;border:1px solid var(--ln)}
+.fab h3{margin-bottom:.15em}
+.dens{color:var(--acd);font-weight:600;font-size:.92rem;margin-bottom:.8em}
+.fab p:last-child{color:var(--mut);font-size:.96rem}
+.more{margin-top:2.5em}
+/* about */
+.abt{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,6vw,88px)}
+.abt h2{position:sticky;top:110px;align-self:start}
+.abt h3{margin-top:1.4em}
+.abt .vals p b{font-weight:600}
+@media(max-width:800px){.abt{grid-template-columns:1fr}.abt h2{position:static}}
+/* print */
+.meth{display:flex;flex-wrap:wrap;gap:14px;margin:1.6em 0 2em}
+.meth span{padding:.7em 1.6em;border:1px solid var(--ln);background:var(--surf);font-family:Prata,Georgia,serif;font-size:1.15rem}
+/* contacts */
+.ct{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:1.6em}
+.ct h3{font-size:1rem;font-family:Manrope,sans-serif;font-weight:600;color:var(--mut);margin-bottom:.6em}
+.ct a{display:block;text-decoration:none;font-size:1.15rem;padding:2px 0}
+.ct a:hover{color:var(--acd)}
+footer{background:var(--hero);color:#C9CEDB;--w:rgba(255,255,255,.055);padding:64px 0 48px}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer b{font:400 1.6rem Prata,Georgia,serif;color:#F3F4F1}
+footer h4{margin:0 0 .8em;font-size:.9rem;color:#8E97AD;font-weight:600}
+footer a{display:block;text-decoration:none;padding:3px 0}
+footer a:hover{color:#C9A875}
+footer p{margin:.6em 0 0;font-size:.92rem}
+@media(max-width:800px){footer .wrap{grid-template-columns:1fr}}
+html.ld{overflow:hidden}
+#pre{position:fixed;inset:0;z-index:100;color:#F3F4F1;--w:rgba(255,255,255,.055)}
+#pre .pa,#pre .pb{position:absolute;left:0;right:0;height:50.5%;background-color:var(--hero);transition:transform 1.05s cubic-bezier(.77,0,.18,1)}
+#pre .pa{top:0}#pre .pb{bottom:0}
+#pre.out{pointer-events:none}
+#pre.out .pa{transform:translateY(-101%)}#pre.out .pb{transform:translateY(101%)}
+.pc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .35s}
+#pre.out .pc{opacity:0}
+.pc b{display:flex;overflow:hidden;padding:0 .05em .12em;font:400 clamp(2.4rem,10vw,5rem)/1.1 Prata,Georgia,serif}
+.pc b i{font-style:normal;display:inline-block;transform:translateY(115%);animation:rise .9s cubic-bezier(.2,.7,.1,1) forwards;animation-delay:calc(var(--i)*65ms + 150ms)}
+.pc .th{width:min(260px,60vw);border-top:2px dashed #C9A875;clip-path:inset(0 100% 0 0);animation:stitch 1.2s .55s cubic-bezier(.4,0,.2,1) forwards}
+.pc span{font-size:.82rem;color:#8E97AD;opacity:0;animation:fi .8s 1.1s forwards}
+@keyframes rise{to{transform:none}}@keyframes stitch{to{clip-path:inset(0)}}@keyframes fi{to{opacity:1}}
+@keyframes fl{50%{transform:translateY(-9px)}}
+#cur{position:fixed;inset:0;z-index:90;background-color:var(--hero);--w:rgba(255,255,255,.055);transform:translateY(101%);pointer-events:none}
+#cur::before,#cur::after{content:"";position:absolute;left:0;right:0;height:2px;background:#C9A875}
+#cur::before{top:0}#cur::after{bottom:0}
+#cur.in{transform:none;transition:transform .58s cubic-bezier(.77,0,.18,1);pointer-events:auto}
+#cur.out{transform:translateY(-101%);transition:transform .62s cubic-bezier(.77,0,.18,1);pointer-events:auto}
+#pg{position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:var(--ac);transform:scaleX(0);transform-origin:left}
+header{transition:box-shadow .3s}header.sc{box-shadow:0 10px 30px -20px rgba(0,0,0,.45)}
+nav a{position:relative}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.1,1)}
+nav a:hover,nav a.on{border-color:transparent}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+.btn{transition:background .25s,color .25s,transform .25s}.btn:hover{transform:translateY(-2px)}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.js .hero .w>i{display:inline-block;font-style:normal;transform:translateY(112%)}
+.js .hero.go .w>i{transform:none;transition:transform 1s cubic-bezier(.2,.7,.1,1);transition-delay:calc(var(--i)*80ms + 100ms)}
+.js .hero p,.js .hero .btns{opacity:0;transform:translateY(18px)}
+.js .hero.go p{opacity:1;transform:none;transition:opacity .9s .8s,transform .9s .8s cubic-bezier(.2,.7,.1,1)}
+.js .hero.go .btns{opacity:1;transform:none;transition:opacity .9s .95s,transform .9s .95s cubic-bezier(.2,.7,.1,1)}
+.hero.go svg *{stroke-dashoffset:0!important;transition:stroke-dashoffset 1.7s cubic-bezier(.4,0,.2,1)}
+.hero.go svg{animation:fl 8s ease-in-out 2.6s infinite}
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .9s ease var(--d,0ms),transform .9s cubic-bezier(.2,.7,.1,1) var(--d,0ms)}
+.js .rv.in{opacity:1;transform:none}
+.wrap>h2::after{content:"";display:block;width:0;margin-top:.45em;border-top:2px dashed var(--ac);transition:width 1s .35s cubic-bezier(.2,.7,.1,1)}
+.wrap>h2.in::after{width:72px}
+.js .rv .sw{clip-path:inset(0 100% 0 0)}
+.js .rv.in .sw{clip-path:inset(0);transition:clip-path 1.2s .3s cubic-bezier(.2,.7,.1,1)}
+.sw{transition:transform .6s cubic-bezier(.2,.7,.1,1)}.fab article:hover .sw{transform:scale(1.03)}
+.tile{transition:border-color .2s,transform .35s cubic-bezier(.2,.7,.1,1)}.tile:hover{transform:translateY(-5px)}
+.tile small::after{content:"";display:block;width:0;margin-top:4px;border-top:1px dashed currentColor;transition:width .4s}.tile:hover small::after{width:100%}
+.meth span{transition:border-color .25s,transform .25s}.meth span:hover{border-color:var(--ac);transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}#pre,#cur{display:none}.js .rv,.js .hero p,.js .hero .btns{opacity:1;transform:none}.js .hero .w>i{transform:none}.js .rv .sw{clip-path:none}.pc b i,.pc .th,.pc span{opacity:1;transform:none;clip-path:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.className+=" js ld"</script>
+<div id="pre" aria-hidden="true"><i class="pa tw"></i><i class="pb tw"></i><div class="pc"><b><i style="--i:0">B</i><i style="--i:1">e</i><i style="--i:2">s</i><i style="--i:3">t</i><i style="--i:4">s</i><i style="--i:5">h</i><i style="--i:6">o</i><i style="--i:7">p</i><i style="--i:8">p</i><i style="--i:9">e</i><i style="--i:10">r</i></b><div class="th"></div><span>Швейное производство в Москве</span></div></div>
+<div id="cur" class="tw" aria-hidden="true"></div>
+<header>
+<div class="wrap bar">
+<a class="brand" href="#home"><b>Bestshopper</b><span>Швейное производство в Москве</span></a>
+<nav aria-label="Основная навигация">
+<a href="#home">Главная</a><a href="#about">О компании</a><a href="#products">Продукция</a><a href="#fabrics">Ткани</a><a href="#print">Нанесение логотипа</a><a href="#contacts">Контакты</a>
+</nav>
+<a class="tel" href="tel:+79915859779">+7 991-585-97-79</a>
+</div>
+</header>
+
+<main>
+<section class="hero tw" data-v="home">
+<div class="wrap">
+<div>
+<h1>Мы создаем красивые и качественные вещи</h1>
+<p>Швейное производство в Москве. Если вам требуется большая партия или индивидуальный заказ, просто свяжитесь с нами!</p>
+<div class="btns"><a class="btn" href="https://wa.me/79915859779" target="_blank" rel="noopener">Связаться</a><a class="btn o" href="#products">Продукция</a></div>
+</div>
+<svg viewBox="0 0 240 280" fill="none" stroke="#C9A875" stroke-width="1.5" aria-hidden="true"><path d="M80 92C80 14 160 14 160 92"/><path d="M84 92C84 28 156 28 156 92" opacity=".45"/><path d="M40 92H200L214 264H26Z"/><rect x="92" y="150" width="56" height="56" opacity=".8"/><path d="M104 170h32M104 186h20" opacity=".8"/></svg>
+</div>
+</section>
+
+<section class="sec" data-v="home">
+<div class="wrap st">
+<div><h3>Отшиваем большими тиражами</h3><p>Наши производственные мощности позволяют выполнять заказы малого объема, в том числе крупные партии для корпоративных клиентов.</p></div>
+<div><h3>Практичные изделия по вашему техзаданию</h3><p>Работаем по техническому заданию или разрабатываем техзадание для отшива партии по Вашим запросам и потребностям.</p></div>
+</div>
+</section>
+
+<section class="band" data-v="home">
+<div class="wrap sec" style="padding-block:56px">
+<div><h2>Мы сами производим</h2><p>Если вам требуется большая партия или индивидуальный заказ, просто свяжитесь с нами!</p></div>
+<a class="btn" href="https://wa.me/79915859779" target="_blank" rel="noopener">Связаться</a>
+</div>
+</section>
+
+<section class="sec" id="prod" data-v="home products">
+<div class="wrap">
+<h2>Продукция</h2>
+<div class="grid">
+<a class="tile tw big" href="https://bestshopper.ru/sumki-shopperi-s-logotipom-optom-na-zakaz/" target="_blank" rel="noopener"><h3>Сумки шопперы</h3><small>Смотреть на сайте</small></a>
+<a class="tile tw" href="https://bestshopper.ru/%d1%87%d0%b5%d1%85%d0%bb%d1%8b-%d0%b4%d0%bb%d1%8f-%d0%be%d0%b4%d0%b5%d0%b6%d0%b4%d1%8b-%d0%be%d0%bf%d1%82%d0%be%d0%bc-%d1%81-%d0%bb%d0%be%d0%b3%d0%be%d1%82%d0%b8%d0%bf%d0%be%d0%bc/" target="_blank" rel="noopener"><h3>Чехлы для одежды</h3><small>Смотреть на сайте</small></a>
+<a class="tile tw" href="https://bestshopper.ru/%d0%bc%d0%b5%d1%88%d0%ba%d0%b8-%d0%b4%d0%bb%d1%8f-%d0%be%d0%b1%d1%83%d0%b2%d0%b8-%d1%81-%d0%bb%d0%be%d0%b3%d0%be%d1%82%d0%b8%d0%bf%d0%be%d0%bc-%d0%be%d0%bf%d1%82%d0%be%d0%bc/" target="_blank" rel="noopener"><h3>Мешки для обуви</h3><small>Смотреть на сайте</small></a>
+<a class="tile tw" href="https://bestshopper.ru/%d0%bf%d0%bb%d1%8f%d0%b6%d0%bd%d1%8b%d0%b5-%d1%81%d1%83%d0%bc%d0%ba%d0%b8/" target="_blank" rel="noopener"><h3>Пляжные сумки</h3><small>Смотреть на сайте</small></a>
+<a class="tile tw" href="https://bestshopper.ru/%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d0%bd%d1%8b%d0%b5-%d0%bf%d0%be%d0%b4%d0%b3%d0%be%d0%bb%d0%be%d0%b2%d0%bd%d0%b8%d0%ba%d0%b8/" target="_blank" rel="noopener"><h3>Рекламные подголовники</h3><small>Смотреть на сайте</small></a>
+<div class="tile tw big"><h3>Фартуки</h3><div class="subs">
+<a href="https://bestshopper.ru/%d0%b4%d0%bb%d1%8f-%d0%bf%d0%b0%d1%80%d0%b8%d0%ba%d0%bc%d0%b0%d1%85%d0%b5%d1%80%d0%be%d0%b2/" target="_blank" rel="noopener">Для парикмахеров</a>
+<a href="https://bestshopper.ru/%d0%b4%d0%bb%d1%8f-%d0%b1%d1%8c%d1%8e%d1%82%d0%b8-%d0%bc%d0%b0%d1%81%d1%82%d0%b5%d1%80%d0%be%d0%b2/" target="_blank" rel="noopener">Для бьюти мастеров</a>
+<a href="https://bestshopper.ru/%d0%b4%d0%bb%d1%8f-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bd%d1%82%d0%be%d0%b2/" target="_blank" rel="noopener">Для официантов</a></div></div>
+<a class="tile tw" href="https://bestshopper.ru/%d0%bf%d0%bb%d0%b5%d0%b4%d1%8b-%d1%81-%d0%bb%d0%be%d0%b3%d0%be%d1%82%d0%b8%d0%bf%d0%be%d0%bc-%d0%be%d0%bf%d1%82%d0%be%d0%bc-%d0%bd%d0%b0-%d0%b7%d0%b0%d0%ba%d0%b0%d0%b7/" target="_blank" rel="noopener"><h3>Пледы</h3><small>Смотреть на сайте</small></a>
+<a class="tile tw" href="https://bestshopper.ru/%d0%b1%d0%b0%d0%bd%d0%b4%d0%b0%d0%bd%d1%8b/" target="_blank" rel="noopener"><h3>Банданы</h3><small>Смотреть на сайте</small></a>
+</div>
+</div>
+</section>
+
+<section class="sec band" data-v="home fabrics">
+<div class="wrap">
+<h2>Виды тканей</h2>
+<p class="lead">Для пошива мы используем самые практичные и экологичные ткани</p>
+<div class="fab">
+<article><div class="sw pl" style="background-color:#D9D2C0"></div><h3>Двунитка</h3><p class="dens">100% хлопок · плотность от 220 г/м²</p><p>Долго не выгорает, цвет сохраняется даже после частых стирок. Низкая сминаемость. Аппретированная двунить устойчива к гниению.</p></article>
+<article><div class="sw" style="background-color:#E3E0D6;background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.1) 0 1px,transparent 1px 5px)"></div><h3>Диагональ</h3><p class="dens">100% хлопок · плотность от 220 г/м²</p><p>Экологически чистый материал. Обладает высокой прочностью. Диагональ создается при переплетении одинаковых рубцов под углом 45°.</p></article>
+<article><div class="sw" style="background-color:#CFC6B0;background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.12) 0 2px,transparent 2px 6px)"></div><h3>Саржа</h3><p class="dens">100% хлопок · плотность от 240 г/м²</p><p>Экологически чистый материал, биоразлагаем в почве. Не мнется, держит форму, устойчивый к выгоранию. Презентабельный вид.</p></article>
+<article><div class="sw pl" style="background-color:#E9E3D3"></div><h3>Бязь</h3><p class="dens">100% хлопок · плотность от 140 г/м²</p><p>Экологически чистый материал, биоразлагаем в почве. Высокая плотность. Долгий срок службы без деформации ткани.</p></article>
+</div>
+<p class="more"><a class="btn o" href="https://bestshopper.ru/tkani/" target="_blank" rel="noopener">Смотреть все виды тканей</a></p>
+</div>
+</section>
+
+<section class="sec" data-v="home about">
+<div class="wrap abt">
+<h2>О нас</h2>
+<div>
+<p><b>Добро пожаловать в БестШоппер – Ваш надежный партнёр в мире качественных и стильных брендированных изделий!</b></p>
+<p>БестШоппер — компания по разработке и пошиву индивидуального мерча для бизнеса. Мы специализируемся на пошиве широкого ассортимента продукции, включая брендированные шопперы, чехлы для одежды с логотипом, мешки для обуви и многое другое. Наша цель – предоставить вам не просто товар, а решение для продвижения вашего бизнеса!</p>
+<h3>Наши ценности</h3>
+<div class="vals">
+<p><b>Клиентоориентированность:</b> Мы ценим каждого клиента и стремимся к тому, чтобы Ваш опыт сотрудничества с нами был максимально положительным и долгосрочным. Наша команда всегда готова помочь вам с выбором и ответить на все вопросы.</p>
+<p><b>Качество:</b> Мы тщательно отбираем материалы и контролируем каждый этап производства, чтобы вы могли быть уверены в долговечности и надежности наших изделий.</p>
+<p><b>Стиль:</b> Мы следим за последними модными тенденциями и предлагаем вам только самые актуальные и стильные решения. С БестШоппер вы всегда будете в тренде.</p>
+<p><b>Экологичность:</b> Мы заботимся о нашей планете и используем экологически чистые материалы. Наша продукция – это ваш вклад в сохранение окружающей среды.</p>
+</div>
+<p>Заходите в раздел новости, чтобы познакомиться с нашими новинками и акциями. Мы уверены, что вы найдете у нас то, что искали!</p>
+<a class="btn o" href="https://bestshopper.ru/%d0%bd%d0%be%d0%b2%d0%be%d1%81%d1%82%d0%b8/" target="_blank" rel="noopener">Новости</a>
+</div>
+</div>
+</section>
+
+<section class="sec band" data-v="home print">
+<div class="wrap">
+<h2>Сумки-шопперы с логотипами</h2>
+<p class="lead" style="margin-bottom:0">Наносим принты и логотипы любой сложности. Большой выбор экологичных натуральных материалов, различные техники нанесения уникальных принтов, разнообразие вариантов дизайна сумок и чехлов.</p>
+<h3 style="margin-top:2em">Примеры нашей продукции</h3>
+<p class="lead" style="margin:.6em 0 0">Печать рисунка может быть выполнена методом шелкографии, термотрансфером или DTF</p>
+<div class="meth"><span>Шелкография</span><span>Термотрансфер</span><span>DTF</span></div>
+<a class="btn" href="https://wa.me/79915859779" target="_blank" rel="noopener">Оставить заявку</a>
+<a class="btn o" style="margin-left:10px" href="https://bestshopper.ru/%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be-2/" target="_blank" rel="noopener">Портфолио</a>
+</div>
+</section>
+
+<section class="sec" data-v="contacts">
+<div class="wrap">
+<h2>По всем вопросам обращайтесь</h2>
+<div class="ct">
+<div><h3>Почта</h3><a href="mailto:bestshopper33@yandex.ru">bestshopper33@yandex.ru</a></div>
+<div><h3>Телефоны</h3><a href="tel:+79915859779">+7 991-585-97-79</a><a href="tel:+79164282876">+7 916-428-28-76</a><a href="tel:+79152853322">+7 915-285-33-22</a></div>
+<div><h3>Мессенджеры</h3><a href="https://t.me/bestshopper_ru" target="_blank" rel="noopener">Telegram</a><a href="https://wa.me/79915859779" target="_blank" rel="noopener">WhatsApp</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="tw">
+<div class="wrap">
+<div><b>Bestshopper</b><p>Швейное производство в Москве.<br>Мы создаем красивые и качественные вещи.</p></div>
+<div><h4>Ещё на сайте</h4>
+<a href="https://bestshopper.ru/%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be-2/" target="_blank" rel="noopener">Портфолио</a>
+<a href="https://bestshopper.ru/%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0-%d0%b8-%d0%be%d0%bf%d0%bb%d0%b0%d1%82%d0%b0/" target="_blank" rel="noopener">Доставка и оплата</a>
+<a href="https://bestshopper.ru/%d0%b1%d0%bb%d0%be%d0%b3/" target="_blank" rel="noopener">Блог</a>
+<a href="https://bestshopper.ru/%d0%be%d1%82%d0%b7%d1%8b%d0%b2%d1%8b/" target="_blank" rel="noopener">Отзывы</a>
+<a href="https://bestshopper.ru/%d0%bd%d0%be%d0%b2%d0%be%d1%81%d1%82%d0%b8/" target="_blank" rel="noopener">Новости</a></div>
+<div><h4>Контакты</h4>
+<a href="mailto:bestshopper33@yandex.ru">bestshopper33@yandex.ru</a>
+<a href="tel:+79915859779">+7 991-585-97-79</a>
+<a href="tel:+79164282876">+7 916-428-28-76</a>
+<a href="tel:+79152853322">+7 915-285-33-22</a>
+<a href="https://t.me/bestshopper_ru" target="_blank" rel="noopener">Telegram</a>
+<a href="https://wa.me/79915859779" target="_blank" rel="noopener">WhatsApp</a></div>
+</div>
+</footer>
+
+<script>
+(function(){
+var T={home:"Bestshopper — Сумки-шопперы от производителя",about:"О компании — Bestshopper",products:"Продукция — Bestshopper",fabrics:"Ткани — Bestshopper",print:"Нанесение логотипа — Bestshopper",contacts:"Контакты — Bestshopper"};
+function route(){
+var h=location.hash.slice(1);if(!T[h])h="home";
+document.querySelectorAll("[data-v]").forEach(function(e){e.hidden=e.dataset.v.split(" ").indexOf(h)<0});
+document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
+document.title=T[h];window.scrollTo({top:0,behavior:"instant"});view=h;rvs.forEach(function(e){e.classList.add("rv");e.classList.remove("in")});if(h==="home"&&ready)playHero();
+}
+var html=document.documentElement,rm=matchMedia("(prefers-reduced-motion:reduce)").matches,pre=document.getElementById("pre"),cu=document.getElementById("cur"),hd=document.querySelector("header"),hero=document.querySelector(".hero"),busy=false,pend=false,ready=false,view="home";
+var pg=document.createElement("i");pg.id="pg";hd.appendChild(pg);
+var h1=hero.querySelector("h1");
+h1.innerHTML=h1.textContent.split(" ").map(function(w,i){return '<span class="w"><i style="--i:'+i+'">'+w+'</i></span>'}).join(" ");
+if(!rm)hero.querySelectorAll("svg path,svg rect").forEach(function(p,i){var L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.style.transitionDelay=(0.5+i*.2)+"s"});
+var rvs=[].slice.call(document.querySelectorAll(".st>div,.grid>.tile,.fab article,.abt>*,.wrap>h2,.wrap>.lead,.meth span,.ct>div,.band .wrap>div:first-child:not(.fab):not(.meth)"));
+rvs.forEach(function(e){e.classList.add("rv");var s=[].indexOf.call(e.parentNode.children,e);e.style.setProperty("--d",(s%4)*90+"ms")});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var t=x.target;t.classList.add("in");io.unobserve(t);setTimeout(function(){if(t.classList.contains("in"))t.classList.remove("rv")},1800)}})},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+function arm(){io.disconnect();rvs.forEach(function(e){io.observe(e)})}
+function playHero(){hero.classList.remove("go");void hero.offsetWidth;setTimeout(function(){hero.classList.add("go")},60)}
+function go(){if(busy){pend=true;return}
+if(rm){route();arm();return}
+busy=true;cu.classList.add("in");
+setTimeout(function(){route();cu.classList.remove("in");cu.classList.add("out");setTimeout(arm,250);
+setTimeout(function(){cu.classList.remove("out");busy=false;if(pend){pend=false;go()}},650)},580)}
+window.addEventListener("hashchange",go);
+function sc(){var m=document.documentElement.scrollHeight-innerHeight;pg.style.transform="scaleX("+(m>0?Math.min(1,scrollY/m):0)+")";hd.classList.toggle("sc",scrollY>8)}
+addEventListener("scroll",sc,{passive:true});
+var t0=Date.now(),fin=false;
+function finish(){if(fin)return;fin=true;var w=rm?0:Math.max(0,2000-(Date.now()-t0));
+setTimeout(function(){pre.classList.add("out");html.classList.remove("ld");
+setTimeout(function(){ready=true;arm();if(view==="home")playHero()},550);
+setTimeout(function(){pre.remove()},1500)},w)}
+function wait(){(document.fonts?document.fonts.ready:Promise.resolve()).then(finish)}
+if(document.readyState==="complete")wait();else addEventListener("load",wait);
+setTimeout(finish,4500);
+route();
+})();
+</script>
+</body>
+</html>

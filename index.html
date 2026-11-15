@@ -40,7 +40,9 @@ nav{display:flex;gap:clamp(14px,2.4vw,32px);overflow-x:auto;scrollbar-width:none
 nav a{white-space:nowrap;text-decoration:none;font-size:.93rem;color:var(--mut);padding:6px 0;border-bottom:1px solid transparent}
 nav a:hover,nav a.on{color:var(--tx);border-color:var(--ac)}
 .tel{font-weight:600;text-decoration:none;white-space:nowrap;font-size:.95rem}
-@media(max-width:900px){.bar{flex-wrap:wrap;gap:10px 20px}nav{order:3;width:100%}}
+.bg,.cta,.nc{display:none}
+html{-webkit-text-size-adjust:100%}
+h1,h2,h3{text-wrap:balance}
 /* hero */
 .hero{background-color:var(--hero);color:var(--herotx);--w:rgba(255,255,255,.055)}
 .hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center;padding-top:clamp(64px,10vw,140px);padding-bottom:clamp(64px,10vw,140px)}
@@ -143,6 +145,43 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
 .tile{transition:border-color .2s,transform .35s cubic-bezier(.2,.7,.1,1)}.tile:hover{transform:translateY(-5px)}
 .tile small::after{content:"";display:block;width:0;margin-top:4px;border-top:1px dashed currentColor;transition:width .4s}.tile:hover small::after{width:100%}
 .meth span{transition:border-color .25s,transform .25s}.meth span:hover{border-color:var(--ac);transform:translateY(-3px)}
+html.mo{overflow:hidden}
+@media(max-width:900px){
+.brand,.bg{position:relative;z-index:2}
+.bar{gap:12px;padding-top:10px;padding-bottom:10px}
+.tel{display:none}
+.bg{display:flex;flex-direction:column;justify-content:center;gap:7px;width:46px;height:46px;padding:0 11px;margin-left:auto;background:none;border:1px solid var(--ln);color:var(--tx);cursor:pointer}
+.bg i{display:block;height:1.5px;background:currentColor;transition:transform .45s cubic-bezier(.2,.7,.1,1)}
+.bg[aria-expanded=true] i:first-child{transform:translateY(4.25px) rotate(45deg)}
+.bg[aria-expanded=true] i:last-child{transform:translateY(-4.25px) rotate(-45deg)}
+nav{position:fixed;inset:0;z-index:1;flex-direction:column;gap:0;overflow:hidden auto;padding:calc(env(safe-area-inset-top,0px) + 84px) clamp(20px,5vw,56px) calc(env(safe-area-inset-bottom,0px) + 28px);background-color:var(--bg);background-image:repeating-linear-gradient(45deg,var(--w) 0 1px,transparent 1px 7px);visibility:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .65s cubic-bezier(.77,0,.18,1),visibility 0s .65s}
+nav.open{visibility:visible;clip-path:inset(0);transition:clip-path .65s cubic-bezier(.77,0,.18,1),visibility 0s}
+nav>a{font:400 clamp(1.7rem,8vw,2.4rem)/1.2 Prata,Georgia,serif;color:var(--tx);padding:16px 0;border-bottom:1px solid var(--ln);opacity:0;transform:translateY(26px);transition:opacity .5s,transform .6s cubic-bezier(.2,.7,.1,1)}
+nav.open>a{opacity:1;transform:none;transition-delay:calc(var(--i)*60ms + 280ms)}
+nav>a::after{display:none}
+nav>a.on,nav>a:hover{border-color:var(--ln)}
+nav>a.on{color:var(--acd)}
+.nc{display:grid;gap:4px;margin-top:auto;padding-top:32px;opacity:0;transition:opacity .5s}
+nav.open .nc{opacity:1;transition-delay:.75s}
+nav .nc a{font:500 1.05rem Manrope,sans-serif;padding:8px 0;color:var(--tx);border:0}
+nav .nc a.btn{color:#121C33;text-align:center;padding:.95em;margin-bottom:10px}
+.cta{display:flex;align-items:center;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:8;padding:.85em 1.4em;background:var(--ac);color:#121C33;font-weight:600;font-size:.95rem;text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);transition:opacity .3s}
+html.mo .cta{opacity:0;pointer-events:none}
+}
+@media(max-width:560px){
+body{font-size:16px}
+.brand b{font-size:1.3rem}
+.tile{min-height:150px;padding:22px}
+.hero .wrap{gap:36px}
+.hero .btns .btn{flex:1 1 150px;text-align:center}
+.btn{padding:.9em 1.4em}
+.band .btn{display:block;text-align:center}
+.btn+.btn{margin:12px 0 0!important}
+.subs a{padding:6px 0}
+.meth span{flex:1 1 auto;text-align:center}
+.ct a,footer a{padding:8px 0}
+footer{padding:48px 0 calc(110px + env(safe-area-inset-bottom,0px))}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}#pre,#cur{display:none}.js .rv,.js .hero p,.js .hero .btns{opacity:1;transform:none}.js .hero .w>i{transform:none}.js .rv .sw{clip-path:none}.pc b i,.pc .th,.pc span{opacity:1;transform:none;clip-path:none}}
 </style>
 </head>
@@ -153,13 +192,16 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
 <header>
 <div class="wrap bar">
 <a class="brand" href="#home"><b>Bestshopper</b><span>Швейное производство в Москве</span></a>
-<nav aria-label="Основная навигация">
-<a href="#home">Главная</a><a href="#about">О компании</a><a href="#products">Продукция</a><a href="#fabrics">Ткани</a><a href="#print">Нанесение логотипа</a><a href="#contacts">Контакты</a>
+<nav id="nav" aria-label="Основная навигация">
+<a style="--i:0" href="#home">Главная</a><a style="--i:1" href="#about">О компании</a><a style="--i:2" href="#products">Продукция</a><a style="--i:3" href="#fabrics">Ткани</a><a style="--i:4" href="#print">Нанесение логотипа</a><a style="--i:5" href="#contacts">Контакты</a>
+<div class="nc"><a class="btn" href="https://wa.me/79915859779" target="_blank" rel="noopener">Связаться в WhatsApp</a><a href="tel:+79915859779">+7 991-585-97-79</a><a href="https://t.me/bestshopper_ru" target="_blank" rel="noopener">Telegram</a><a href="mailto:bestshopper33@yandex.ru">bestshopper33@yandex.ru</a></div>
 </nav>
 <a class="tel" href="tel:+79915859779">+7 991-585-97-79</a>
+<button class="bg" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
 </div>
 </header>
 
+<a class="cta" href="https://wa.me/79915859779" target="_blank" rel="noopener">Связаться</a>
 <main>
 <section class="hero tw" data-v="home">
 <div class="wrap">
@@ -306,6 +348,12 @@ busy=true;cu.classList.add("in");
 setTimeout(function(){route();cu.classList.remove("in");cu.classList.add("out");setTimeout(arm,250);
 setTimeout(function(){cu.classList.remove("out");busy=false;if(pend){pend=false;go()}},650)},580)}
 window.addEventListener("hashchange",go);
+var bg=document.querySelector(".bg"),nv=document.getElementById("nav");
+function menu(o){nv.classList.toggle("open",o);bg.setAttribute("aria-expanded",o);html.classList.toggle("mo",o)}
+bg.addEventListener("click",function(){menu(!nv.classList.contains("open"))});
+nv.addEventListener("click",function(e){if(e.target.closest("a"))menu(false)});
+addEventListener("keydown",function(e){if(e.key==="Escape")menu(false)});
+addEventListener("resize",function(){if(innerWidth>900)menu(false)});
 function sc(){var m=document.documentElement.scrollHeight-innerHeight;pg.style.transform="scaleX("+(m>0?Math.min(1,scrollY/m):0)+")";hd.classList.toggle("sc",scrollY>8)}
 addEventListener("scroll",sc,{passive:true});
 var t0=Date.now(),fin=false;
